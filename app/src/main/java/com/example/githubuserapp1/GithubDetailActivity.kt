@@ -14,8 +14,11 @@ class GithubDetailActivity : AppCompatActivity() {
         //val data = intent.getParcelableExtra<Github>("DATA")
         
          val tvDataReceived: TextView = findViewById(R.id.tv_item_username)
+          val imgPhoto: ImageView = findViewById(R.id.img_item_photo)
+          
         val data = intent.getParcelableExtra<Github>(EXTRA_GITHUB) as Github
-        val text = "Username : ${data.username.toString()},\nname : ${data.name},\nLocation : ${data.location},\nRepository : ${data.repository}"
+        imgPhoto.setImageResource(data.avatars)
+        val text = "Username : ${data.username.toString()},\nName : ${data.name},\nLocation : ${data.location},\nRepository : ${data.repository},\nCompany : ${data.company},\nFollowers : ${data.followers},\nFollowing : ${data.following}"
         tvDataReceived.text = text
 
     }
