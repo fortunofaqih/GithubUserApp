@@ -1,4 +1,5 @@
 package com.example.githubuserapp1
 
-class TestModel {
-}
+class TestModel (
+    var name : String = ""
+        )
